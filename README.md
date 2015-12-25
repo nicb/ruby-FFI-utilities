@@ -20,7 +20,10 @@ Or install it yourself as:
 
 ## Usage
 
-This is brand new. Come back later for some (even) basic usage.
+Currently implemented utility functions are:
+
+* `set_args(array_of_string_arguments)` - transforms a `ruby` string array
+  into an array suitable to be passed to a `C` function that accepts a `char *[]` argument
 
 ## Development
 

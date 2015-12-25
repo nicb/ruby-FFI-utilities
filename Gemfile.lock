@@ -41,7 +41,7 @@ DEPENDENCIES
   bundler (~> 1.9)
   byebug
   codeclimate-test-reporter
-  ffi (~> 1.9)
+  ffi
   rake (~> 10.0)
   rdoc
   rspec

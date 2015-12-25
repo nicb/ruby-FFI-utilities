@@ -1,17 +1,18 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'ruby/FFI/utilities/version'
+require 'FFI/utilities/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "ruby-FFI-utilities"
-  spec.version       = Ruby::FFI::Utilities::VERSION
-  spec.authors       = ["Nicola Bernardini"]
-  spec.email         = ["nicb@sme-ccppd.org"]
+  spec.name          = 'ruby-FFI-utilities'
+  spec.version       = FFI::Utilities::VERSION
+  spec.authors       = ['Nicola Bernardini']
+  spec.email         = ['n.bernardini@conservatoriosantacecilia.it']
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Ruby FFI Utilities}
+  spec.description   = %q{Utilities for the FFI (Foreign Function Interface) library for Ruby}
+  spec.homepage      = 'https://github.com/nicb/ruby-FFI-utilities'
+
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.

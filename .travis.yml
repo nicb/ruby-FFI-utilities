@@ -4,3 +4,10 @@ rvm:
 addons:
   code_climate:
     repo_token: 9eca87fe6ab3ddab7776b3b20f9c794d0651f3ac60a224dcd9422c2413f30b77
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/3e8fd9459b31f278a4ae
+    on_success: always  # options: [always|never|change] default: always
+    on_failure: always  # options: [always|never|change] default: always
+    on_start: always     # options: [always|never|change] default: always

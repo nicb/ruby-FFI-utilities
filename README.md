@@ -1,5 +1,7 @@
 # Ruby FFI::Utilities
 
+[![Build Status](https://travis-ci.org/nicb/ruby-FFI-utilities.svg?branch=master)](https://travis-ci.org/nicb/ruby-FFI-utilities)
+
 Utilities for the FFI (*Foreign Function Interface*) library for Ruby
 
 ## Installation

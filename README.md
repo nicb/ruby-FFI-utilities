@@ -1,6 +1,9 @@
 # Ruby FFI::Utilities
 
 [![Build Status](https://travis-ci.org/nicb/ruby-FFI-utilities.svg?branch=master)](https://travis-ci.org/nicb/ruby-FFI-utilities)
+[![Code Climate](https://codeclimate.com/github/nicb/ruby-FFI-utilities/badges/gpa.svg)](https://codeclimate.com/github/nicb/ruby-FFI-utilities)
+[![Test Coverage](https://codeclimate.com/github/nicb/ruby-FFI-utilities/badges/coverage.svg)](https://codeclimate.com/github/nicb/ruby-FFI-utilities/coverage)
+[![Issue Count](https://codeclimate.com/github/nicb/ruby-FFI-utilities/badges/issue_count.svg)](https://codeclimate.com/github/nicb/ruby-FFI-utilities)
 
 Utilities for the FFI (*Foreign Function Interface*) library for Ruby
 

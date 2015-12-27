@@ -6,7 +6,7 @@ describe 'FFI::Utilities.set_argv' do
     arguments = ['test1', 'test2', 'test3' ]
     argc = arguments.size
     result = FFI::MemoryPointer.new(:pointer, argc)
-    expect(res = FFI::Utilities::Test.argv_test(argc, FFI::Utilities.set_argv(arguments), result)).to eq(0)
+    expect(res = FFI::Utilities::Test.set_argv_test(argc, FFI::Utilities.set_argv(arguments), result)).to eq(0)
     expect(result.get_array_of_string(0, argc)).to eq(arguments)
   end
 

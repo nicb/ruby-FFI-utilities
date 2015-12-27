@@ -8,5 +8,6 @@ end
 
 %w(
   version
-  argv
+  set_argv
+  set_string
 ).each { |f| require File.join(FFI::Utilities::PATH, f) }

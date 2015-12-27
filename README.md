@@ -29,6 +29,9 @@ Currently implemented utility functions are:
 
 * `set_args(array_of_string_arguments)` - transforms a `ruby` string array
   into an array suitable to be passed to a `C` function that accepts a `char *[]` argument
+* `set_string(const char *string)` - transforms a `ruby` string
+  into a string pointer suitable to be passed to a `C` function that accepts a
+  `const char *` or a `char *` argument
 
 ## Development
 

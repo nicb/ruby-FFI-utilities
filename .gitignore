@@ -37,6 +37,8 @@ build/
 # all C suffixes
 *.o
 *.so
+*.dylib
+*.dll
 
 # no byebug history
 .byebug_history

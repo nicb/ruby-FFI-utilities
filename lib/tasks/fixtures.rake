@@ -5,7 +5,8 @@ namespace :fixtures do
 
     desc 'build the C library fixture'
     task :build do
-       cd(C_FIXTURE_PATH) { sh 'make' }
+       env = ENV['TRAVIS_OS_NAME'] ? ENV['TRAVIS_OS_NAME'] : 'linux'
+       cd(C_FIXTURE_PATH) { sh "make OS_NAME=#{env}" }
     end
 
     desc 'cleanup the C library fixture'

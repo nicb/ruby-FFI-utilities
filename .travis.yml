@@ -1,6 +1,22 @@
+cache: bundler
+
+os:
+  - linux
+  - osx
+
+matrix:
+  allow_failures:
+    - os: osx
+  
 language: ruby
 rvm:
-  - 2.2.2
+# - "1.9.3" # FIXME: this does not work because of 'byebug' which is incompatible with ruby < 2.0
+  - "2.0.0"
+# - "2.1.0" # FIXME: ruby-2.1.0 does not work because of a problem with bundler compatibility
+  - "2.2.2"
+  - "2.2.4" # FIXME: this fails under osx
+  - "2.3.0" # FIXME: this fails under osx
+
 addons:
   code_climate:
     repo_token: 9eca87fe6ab3ddab7776b3b20f9c794d0651f3ac60a224dcd9422c2413f30b77

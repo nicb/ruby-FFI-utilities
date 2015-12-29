@@ -4,7 +4,11 @@ begin
   require 'byebug'
   require 'rspec/core/rake_task'
   
-  RSpec::Core::RakeTask.new(:spec => 'fixtures:C:build')
+  #
+  # FIXME: we need to set the ruby options to -W0 to silence the warnings connected
+  # to the reassignement of the RUBY_PLATFORM constant value for testing purposes
+  #
+  RSpec::Core::RakeTask.new(:spec => 'fixtures:C:build') { |t| t.ruby_opts = '-W0' }
 rescue LoadError
   # no rspec available
 end

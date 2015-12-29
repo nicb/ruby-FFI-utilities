@@ -8,6 +8,8 @@ end
 
 %w(
   version
+  suffixes
   set_argv
   set_string
+  struct
 ).each { |f| require File.join(FFI::Utilities::PATH, f) }

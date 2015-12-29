@@ -40,3 +40,12 @@ build/
 
 # no byebug history
 .byebug_history
+
+# no core dumps
+core
+
+# no MacOsX crap
+.DS_Store
+
+# no editor crap
+*~

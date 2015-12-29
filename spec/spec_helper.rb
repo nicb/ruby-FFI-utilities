@@ -17,7 +17,7 @@ module FFI
     module Test
 
       extend FFI::Library
-      ffi_lib File.join(C_FIXTURE_PATH, 'libtest.so')
+      ffi_lib File.join(C_FIXTURE_PATH, "libtest#{FFI::Utilities.library_suffix}")
 
       attach_function :set_argv_test, [:int, :pointer, :pointer], :int
       attach_function :set_string_test, [:pointer, :pointer], :int

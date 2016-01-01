@@ -1,13 +1,21 @@
 if ENV['CODECLIMATE_REPO_TOKEN']
   require 'codeclimate-test-reporter'
-  CodeClimate::TestReporter.start
+  CodeClimate::TestReporter.start { add_filter '/spec/' }
 else
 	require 'simplecov'
-  SimpleCov.start
+  SimpleCov.start { add_filter '/spec/' }
 end
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'FFI/utilities'
 require 'byebug'
+
+#
+# Some tests are brittle and broken even in the upstream FFI library, so we
+# won't run them here too (unless we get them to work of course)
+#
+RSpec.configure do |c|
+  c.filter_run_excluding :broken => true
+end
 
 SPEC_FIXTURE_PATH = File.expand_path(File.join('..', 'fixtures'), __FILE__)
 C_FIXTURE_PATH = File.join(SPEC_FIXTURE_PATH, 'C')

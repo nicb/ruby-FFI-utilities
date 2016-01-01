@@ -11,5 +11,6 @@ end
   suffixes
   set_argv
   set_string
+  struct_extensions
   struct
 ).each { |f| require File.join(FFI::Utilities::PATH, f) }

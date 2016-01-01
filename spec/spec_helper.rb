@@ -1,9 +1,15 @@
 if ENV['CODECLIMATE_REPO_TOKEN']
   require 'codeclimate-test-reporter'
-  CodeClimate::TestReporter.start { add_filter '/spec/' }
+  CodeClimate::TestReporter.start do
+    add_filter '/spec/'
+    add_filter '/lib/tasks/'
+  end
 else
 	require 'simplecov'
-  SimpleCov.start { add_filter '/spec/' }
+  SimpleCov.start do
+    add_filter '/spec/'
+    add_filter '/lib/tasks/'
+  end
 end
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'FFI/utilities'

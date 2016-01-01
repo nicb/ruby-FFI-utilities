@@ -53,6 +53,21 @@ describe 'FFI::Utilities::Struct' do
       end
     end
 
+    it 'should make proper copies' do
+      expect((src = FFI::Utilities::Test::Struct0.create(@arg_1, @arg_2, @arg_3)).class).to be(FFI::Utilities::Test::Struct0)
+      expect((mp = FFI::MemoryPointer.new(FFI::Utilities::Test::Struct0.size, 1)).class).to be(FFI::MemoryPointer)
+      expect((copy = FFI::Utilities::Test::Struct0.cast_pointer(mp)).class).to be(FFI::Utilities::Test::Struct0)
+      expect(FFI::Utilities::Test.unmanaged_struct_copy(src, copy)).to be(nil)
+      expect(copy.class).to be(FFI::Utilities::Test::Struct0)
+      1.upto(3) do
+        |n|
+        val = nil
+        eval("val = @arg_#{n}")
+        meth = :"var_#{n}"
+        expect(copy.send(meth)).to eq(val)
+      end
+    end
+
   end
 
   context 'write-only methods' do
@@ -74,8 +89,6 @@ describe 'FFI::Utilities::Struct' do
         attr_char_writer :var_3
 
       end
-
-      attach_function :unmanaged_struct_copy, [Struct1.by_ref, :pointer], :void
 
     end
 
@@ -124,8 +137,6 @@ describe 'FFI::Utilities::Struct' do
 
       end
 
-      attach_function :unmanaged_struct_copy, [Struct2.by_ref, :pointer], :void
-
     end
 
     it 'should respond to both read/write accessors' do
@@ -171,8 +182,6 @@ describe 'FFI::Utilities::Struct' do
         attr_char_accessor :var_3
 
       end
-
-      attach_function :unmanaged_struct_copy, [Struct22.by_ref, :pointer], :void
 
     end
 

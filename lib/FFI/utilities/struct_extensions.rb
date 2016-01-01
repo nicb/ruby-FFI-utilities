@@ -30,6 +30,11 @@ module FFI
           this_self
         end
 
+        def cast_pointer(p)
+          raise ArgumentError, 'bad pointer' unless p.kind_of?(FFI::MemoryPointer)
+          new(p)
+        end
+
         #
         # +attr_reader+, +attr_writer+, +attr_accessor+
         # +attr_char_reader, +attr_char_writer+, +attr_char_accessor+

@@ -1,5 +1,6 @@
 # Ruby FFI::Utilities
 
+[![Gem Version](https://badge.fury.io/rb/ruby-FFI-utilities.svg)](https://badge.fury.io/rb/ruby-FFI-utilities)
 [![Build Status](https://travis-ci.org/nicb/ruby-FFI-utilities.svg?branch=master)](https://travis-ci.org/nicb/ruby-FFI-utilities)
 [![Code Climate](https://codeclimate.com/github/nicb/ruby-FFI-utilities/badges/gpa.svg)](https://codeclimate.com/github/nicb/ruby-FFI-utilities)
 [![Test Coverage](https://codeclimate.com/github/nicb/ruby-FFI-utilities/badges/coverage.svg)](https://codeclimate.com/github/nicb/ruby-FFI-utilities/coverage)

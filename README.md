@@ -5,14 +5,20 @@
 [![Test Coverage](https://codeclimate.com/github/nicb/ruby-FFI-utilities/badges/coverage.svg)](https://codeclimate.com/github/nicb/ruby-FFI-utilities/coverage)
 [![Issue Count](https://codeclimate.com/github/nicb/ruby-FFI-utilities/badges/issue_count.svg)](https://codeclimate.com/github/nicb/ruby-FFI-utilities)
 
-Utilities for the FFI (*Foreign Function Interface*) library for Ruby
+Utilities for the `FFI` (*Foreign Function Interface*) library for Ruby
+
+## Description
+
+The `FFI` library is fantastic in many ways. Sometimes we wish to have some
+extra features to be added upon request. We put these features in this
+`FFI::Utilities` library.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'FFI-utilities'
+gem 'ruby-FFI-utilities'
 ```
 
 And then execute:
@@ -21,9 +27,9 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install FFI-utilities
+    $ gem install ruby-FFI-utilities
 
-## Usage
+## Implemented Utilities
 
 Currently implemented utility functions are:
 
@@ -32,6 +38,20 @@ Currently implemented utility functions are:
 * `set_string(const char *string)` - transforms a `ruby` string
   into a string pointer suitable to be passed to a `C` function that accepts a
   `const char *` or a `char *` argument
+
+There are also two wrappers for `FFI::Struct` and `FFI::ManagedStruct`,
+respectively called `FFI::Utilities::Struct` and
+`FFI::Utilities::ManagedStruct. These two wrappers implement some features,
+such as:
+
+* attribute accessors
+* attribute `char` accessors, which implement single `char` type access to
+  data structures (separated from usual attribute accessors because `ruby`
+  does not make a difference between single-char and multiple-char `String`s
+* private `new` method
+* public `create(*args) [{ |this, *args| ... }]` method, which substitutes `new`
+* `struct_initialize(*args)` private function which mimicks the functionality
+  of `initialize` but gets called by `create`
 
 ## Development
 

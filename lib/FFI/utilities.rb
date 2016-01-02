@@ -8,6 +8,7 @@ end
 
 %w(
   version
+  deprecated
   suffixes
   set_argv
   set_string

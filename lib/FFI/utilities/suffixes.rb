@@ -12,6 +12,7 @@ module FFI
     class << self
 
       def library_suffix
+        deprecated("use the FFI.manage_library_name() method instead")
         res = case RUBY_PLATFORM
               when /linux/i then '.so'
               when /darwin/i then '.dylib'

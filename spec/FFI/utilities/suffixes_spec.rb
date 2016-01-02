@@ -11,7 +11,7 @@ describe 'FFI::Utilities::Suffixes' do
 
     context 'libraries' do
   
-      it 'should return the appropriate library suffix for any given platform' do
+      it 'should return the appropriate library suffix for any given platform', :obsolete => true do
         sfx = @l_sfxes.keys.map { |os| RUBY_PLATFORM.match(os) { |p| @l_sfxes[p.to_s] }}.compact.first
         expect(FFI::Utilities.library_suffix).to eq(sfx)
       end
@@ -33,7 +33,7 @@ describe 'FFI::Utilities::Suffixes' do
 
     context 'libraries' do
   
-      it 'should return the appropriate library suffix for any given platform' do
+      it 'should return the appropriate library suffix for any given platform', :obsolete => true do
         RUBY_PLATFORM = 'x86_64-linux'
         sfx = @l_sfxes.keys.map { |os| RUBY_PLATFORM.match(os) { |p| @l_sfxes[p.to_s] }}.compact.first
         expect(FFI::Utilities.library_suffix).to eq(sfx)
@@ -57,7 +57,7 @@ describe 'FFI::Utilities::Suffixes' do
 
     context 'libraries' do
   
-      it 'should return the appropriate library suffix for any given platform' do
+      it 'should return the appropriate library suffix for any given platform', :obsolete => true do
         RUBY_PLATFORM = 'x86_64-darwin11.0'
         sfx = @l_sfxes.keys.map { |os| RUBY_PLATFORM.match(os) { |p| @l_sfxes[p.to_s] }}.compact.first
         expect(FFI::Utilities.library_suffix).to eq(sfx)
@@ -81,7 +81,7 @@ describe 'FFI::Utilities::Suffixes' do
 
     context 'libraries' do
   
-      it 'should return the appropriate library suffix for any given platform' do
+      it 'should return the appropriate library suffix for any given platform', :obsolete => true do
         RUBY_PLATFORM = 'x86_64-windows7'
         sfx = @l_sfxes.keys.map { |os| RUBY_PLATFORM.match(os) { |p| @l_sfxes[p.to_s] }}.compact.first
         expect(FFI::Utilities.library_suffix).to eq(sfx)
@@ -105,7 +105,7 @@ describe 'FFI::Utilities::Suffixes' do
 
     context 'libraries' do
   
-      it 'should return the appropriate library suffix for any given platform' do
+      it 'should return the appropriate library suffix for any given platform', :obsolete => true do
         RUBY_PLATFORM = 'x86_64-unknown'
         sfx = @l_sfxes.keys.map { |os| RUBY_PLATFORM.match(os) { |p| @l_sfxes[p.to_s] }}.compact.first
         expect{ FFI::Utilities.library_suffix }.to raise_error(FFI::Utilities::UnknownPlatform, "library_suffix: unknown platform #{RUBY_PLATFORM}")
